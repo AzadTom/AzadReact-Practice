@@ -1,36 +1,62 @@
+import { useRef } from "react";
+
 import SkeletonLayout, {
   ShimmerShape,
 } from "../../components/skeleton/SkeletonLayout";
-import useFetchDemoData from "../../hooks/useFetchDemoData";
+import useInfiniteScrolling, {
+  ListType,
+} from "../../hooks/useInfiniteScrolling";
 
 function Homepage() {
-  
-  const { isLoading, data } = useFetchDemoData("DemoData");
-
-  if (isLoading) {
-    return (
-      <SkeletonLayout>
-        <ShimmerShape height="50px" width="100%" shape="rectangle" />
-        <div className="flex justify-between mx-4">
-          <ShimmerShape height="50px" width="50%" shape="rectangle" />
-          <ShimmerShape height="50px" width="30%" shape="rectangle" />
-        </div>
-        <ShimmerShape width="100%" height="300px" shape="rectangle" />
-        <div className="mx-4">
-          <ShimmerShape width="100px" height="30px" shape="rectangle" />
-          <ShimmerShape width="200px" height="30px" shape="rectangle" />
-          <ShimmerShape width="300px" height="30px" shape="rectangle" />
-          <ShimmerShape width="150px" height="30px" shape="rectangle" />
-        </div>
-      </SkeletonLayout>
-    );
-  }
+  const refs = useRef<HTMLDivElement | null>(null);
+  const { isLoading, list } = useInfiniteScrolling(refs);
 
   return (
-    <main>
-      <section className="w-full h-screen flex justify-center items-center">
-          {data && <h2>{data}</h2> }
+    <main className="max-w-4xl mx-auto">
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {list &&
+          list.length > 0 &&
+          list.map((item: ListType) => (
+            <div key={item.bloggerName} className="mt-4">
+              <img
+                src={item.thumb}
+                alt={item.bloggerName}
+                className="w-full h-[250px] object-cover"
+              />
+            </div>
+          ))}
       </section>
+      {isLoading && (
+        <SkeletonLayout>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+          </div>
+        </SkeletonLayout>
+      )}
+      <div ref={refs} />
     </main>
   );
 }
