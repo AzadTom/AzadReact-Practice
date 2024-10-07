@@ -1,3 +1,4 @@
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect, useState, useCallback, RefObject } from "react";
 
 export interface ListType {
@@ -76,3 +77,4 @@ const useInfiniteScrolling = (refs: RefObject<HTMLDivElement>) => {
 };
 
 export default useInfiniteScrolling;
+
