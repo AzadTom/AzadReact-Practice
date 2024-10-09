@@ -14,8 +14,8 @@ function InfiniteScrollingPage() {
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {list &&
           list.length > 0 &&
-          list.map((item: ListType) => (
-            <div key={item.bloggerName} className="mt-4">
+          list.map((item: ListType,index:number) => (
+            <div key={item.bloggerName + index} className="mt-4">
               <img
                 src={item.thumb}
                 alt={item.bloggerName}
@@ -54,7 +54,7 @@ function InfiniteScrollingPage() {
           </div>
         </SkeletonLayout>
       )}
-      <div ref={ref}  className="w-full h-1 bg-red-600"/>
+      <div ref={ref} className="bg-red-600 h-1"/>
     </main>
   );
 }

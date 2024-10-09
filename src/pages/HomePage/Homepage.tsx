@@ -8,8 +8,9 @@ import useInfiniteScrolling, {
 } from "../../hooks/useInfiniteScrolling";
 
 function Homepage() {
-  const refs = useRef<HTMLDivElement | null>(null);
-  const { isLoading, list } = useInfiniteScrolling(refs);
+  
+
+  const { isLoading, list,refs} = useInfiniteScrolling();
 
   return (
     <main className="max-w-4xl mx-auto">

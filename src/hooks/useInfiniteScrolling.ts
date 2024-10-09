@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useEffect, useState, useCallback, RefObject } from "react";
+import { useEffect, useState, useCallback, RefObject, useRef } from "react";
 
 export interface ListType {
   bloggerAvatar: string;
@@ -19,11 +19,12 @@ export interface ListType {
   viewsCount: string;
 }
 
-const useInfiniteScrolling = (refs: RefObject<HTMLDivElement>) => {
+const useInfiniteScrolling = () => {
 
   const [page, setPage] = useState(1);
   const [list, setList] = useState<ListType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const refs  = useRef<HTMLDivElement|null>(null);
 
   const getList = useCallback(async () => {
     setIsLoading(true);
@@ -71,7 +72,7 @@ const useInfiniteScrolling = (refs: RefObject<HTMLDivElement>) => {
     };
   }, [refs,isLoading]);
 
-  return { isLoading, list };
+  return { isLoading, list ,refs };
 
 
 };
