@@ -1,5 +1,4 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { useEffect, useState, useCallback, RefObject, useRef } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 export interface ListType {
   bloggerAvatar: string;
