@@ -1,13 +1,10 @@
 import SkeletonLayout, {
   ShimmerShape,
-} from "../../components/skeleton/SkeletonLayout";
+} from "../../components/ReusableComponent/Skeleton/SkeletonLayout";
 import { ListType } from "../../hooks/useInfiniteScrolling1";
 import useInfiniteScroll from "../../hooks/useInfiniteScrolling2";
 
-
 function BlogPage() {
-
-
   const { data: list, isLoading, ref } = useInfiniteScroll();
 
   return (
