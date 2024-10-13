@@ -1,15 +1,12 @@
-
 import SkeletonLayout, {
   ShimmerShape,
 } from "../../components/skeleton/SkeletonLayout";
-import useInfiniteScrolling, {
+import useInfiniteScroll, {
   ListType,
-} from "../../hooks/useInfiniteScrolling";
+} from "../../hooks/useInfiniteScrolling1";
 
 function Homepage() {
-  
-
-  const { isLoading, list,refs} = useInfiniteScrolling();
+  const { isLoading, list, refs } = useInfiniteScroll();
 
   return (
     <main className="max-w-4xl mx-auto">
