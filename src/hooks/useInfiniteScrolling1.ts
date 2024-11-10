@@ -32,7 +32,7 @@ const useInfiniteScrolling = () => {
     try {
 
       const config:UseFetchDataProps = {
-        url: 'https://api9.parentune.com/blogs/blogs',
+        url: 'https://qa7.parentune.com/api/blog/blogs/blogs',
         params:{
           page:page
         }

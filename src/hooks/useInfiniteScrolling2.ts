@@ -1,11 +1,18 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import {useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import useFetchData, { UseFetchDataProps } from './useFetchData';
 
 
 
 const fetchList = async ({ pageParam = 1 }) => {
-  const response = await fetch(`https://api9.parentune.com/blogs/blogs?page=${pageParam}`);
+  const config:UseFetchDataProps = {
+    url:'https://qa7.parentune.com/api/blog/blogs/blogs',
+    params:{
+      page:pageParam
+    }
+  }
+  const response = await useFetchData(config);
   const result = await response.json();
   return { list: result.list, nextPage: pageParam + 1 };
 };
