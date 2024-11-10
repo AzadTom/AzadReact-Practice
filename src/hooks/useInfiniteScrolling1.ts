@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from "react";
+import useFetchData, { UseFetchDataProps } from "./useFetchData";
 
 
 export interface ListType {
@@ -29,11 +30,16 @@ const useInfiniteScrolling = () => {
   const getList = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(
-        `https://api9.parentune.com/blogs/blogs?page=${page}`
-      );
-      const result = await response.json();
-      setList((prevList) => [...prevList, ...result.list]);
+
+      const config:UseFetchDataProps = {
+        url: 'https://api9.parentune.com/blogs/blogs',
+        params:{
+          page:page
+        }
+      };
+
+      const result = await useFetchData(config);
+      setList((prevList) => [...prevList, ...result?.list]);
 
       console.log("result:",result)
     } catch (error) {

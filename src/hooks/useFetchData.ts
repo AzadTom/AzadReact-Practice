@@ -1,7 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
-interface UseFetchDataProps {
+export interface UseFetchDataProps {
   url: string;
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
   body?: any;
@@ -9,47 +8,28 @@ interface UseFetchDataProps {
   params?: any;
 }
 
-interface FetchState<T> {
-  data: T | null;
-  loading: boolean;
-  error: Error | null;
-}
 
-const useFetchData = <T = unknown>({
-  url,
-  method = 'GET',
-  body = null,
-  headers = {},
-  params = {},
-}: UseFetchDataProps): FetchState<T> => {
-  const [data, setData] = useState<T | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<Error | null>(null);
+const useFetchData = async(props: UseFetchDataProps)=> {
+ 
+  const { url, method = 'GET', body = null, headers = {}, params = {} } = props;
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const config: AxiosRequestConfig = {
-        url,
-        method,
-        headers,
-        params,
-        data: body,
-      };
-      const response = await axios(config);
-      setData(response.data);
-    } catch (err) {
-      setError(err as Error);
-    } finally {
-      setLoading(false);
-    }
-  }, [url, method, body, headers, params]);
+     try {
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+      const response = await axios({
+        method:method,
+        url:url,
+        headers:headers,
+        params:params,
+        data:body
+      });
 
-  return { data, loading, error };
+      return response.data;
+
+     } catch (error) {
+        console.log("error:",error);
+     }
+
 };
 
 export default useFetchData;
+
