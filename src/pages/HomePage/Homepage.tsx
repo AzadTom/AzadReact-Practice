@@ -5,6 +5,7 @@ import SkeletonLayout, {
 import useInfiniteScroll, { ListType } from "../../hooks/useInfiniteScrolling1";
 import ShowModel from "../../components/ReusableComponent/Dialog/ShowModel";
 import MetaTags from "./MetaTags";
+import CommentContainer from "../../components/Comment/CommentContainer";
 
 function Homepage() {
 
@@ -14,6 +15,7 @@ function Homepage() {
   return (
     <>
       <MetaTags/>
+      <CommentContainer/>
       <main className="max-w-4xl mx-auto">
         {state && (
           <ShowModel bg="#F0F0F0">
