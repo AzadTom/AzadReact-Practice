@@ -6,15 +6,20 @@ import useInfiniteScroll, { ListType } from "../../hooks/useInfiniteScrolling1";
 import ShowModel from "../../components/ReusableComponent/Dialog/ShowModel";
 import MetaTags from "./MetaTags";
 import CommentContainer from "../../components/Comment/CommentContainer";
+import { useNavigate } from "react-router-dom";
 
 function Homepage() {
 
   const { isLoading, list, refs } = useInfiniteScroll();
   const [state, setState] = useState<boolean>(false);
 
+  const navigate  = useNavigate();
   return (
     <>
       <MetaTags/>
+      <div className={'p-4'}>
+        <button className="px-4 py-2 rounded-md bg-blue-600 text-white" onClick={()=> navigate('/register')}>Register</button>
+      </div>
       <CommentContainer/>
       <main className="max-w-4xl mx-auto">
         {state && (

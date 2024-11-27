@@ -3,6 +3,7 @@ import Homepage from "./pages/HomePage/Homepage"
 import BlogPage from "./pages/BlogPage/BlogPage"
 import DialogPage from "./pages/DialogPage/DialogPage"
 import NotFound from "./pages/NotFound/NotFound"
+import Register from "./pages/Register/Register"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<Homepage/>}/>
       <Route path="/infinite-scrolling" element={<BlogPage/>}/>
       <Route path="/model"  element={<DialogPage/>}/>
+      <Route path="/register" element={<Register/>}/>
       <Route path="*" element={<NotFound/>}/>
     </Routes>
   )
