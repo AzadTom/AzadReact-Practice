@@ -5,6 +5,23 @@
     box-sizing: border-box;
 }
 
+.scale-up-ver-bottom {
+  transform: translateY(100%);
+  animation: scale-up-ver-bottom 1.5s ease-out both; /* Smooth scrolling animation */
+  transition: transform 1.5s ease-out;
+}
+
+/* Keyframes */
+@keyframes scale-up-ver-bottom {
+  0% {
+      transform: translateY(100%); /* Component starts off-screen */
+  }
+  100% {
+      transform: translateY(0); /* Component fully visible */
+  }
+}
+
+
 body{
 
     font-family: Arial, Helvetica, sans-serif;

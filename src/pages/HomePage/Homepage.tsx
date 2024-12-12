@@ -38,6 +38,12 @@ function Homepage() {
         >
           Tanstack Query <br /> ReactIntersectionObserver 
         </button>
+        <button
+          className="px-4 py-2 rounded-md bg-blue-600 text-white"
+          onClick={() => navigate("/scroll-model")}
+        >
+          SignUpModel <br /> animatedScrollBar 
+        </button>
       </div>
 
 
