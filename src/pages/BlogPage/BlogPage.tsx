@@ -7,8 +7,9 @@ import useInfiniteScroll from "../../hooks/useInfiniteScrolling2";
 function BlogPage() {
   const { data: list, isLoading, ref } = useInfiniteScroll();
 
+
   return (
-    <main className="max-w-4xl mx-auto">
+    <main className="max-w-4xl mx-auto px-4">
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {list &&
           list.length > 0 &&

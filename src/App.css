@@ -1,0 +1,32 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Light background for the track */
+  }
+  
+  /* Scrollbar itself */
+  ::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+  }
+  
+  /* Scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: #8c8c8c; /* Gray color for the thumb */
+  }
+  
+  /* Hover effect for the scrollbar thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b0b0b0; /* Darker gray when hovered */
+  }

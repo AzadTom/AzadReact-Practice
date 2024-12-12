@@ -12,8 +12,7 @@ const fetchList = async ({ pageParam = 1 }) => {
       page:pageParam
     }
   }
-  const response = await useFetchData(config);
-  const result = await response.json();
+  const result = await useFetchData(config);
   return { list: result.list, nextPage: pageParam + 1 };
 };
 
