@@ -1,22 +1,22 @@
 type TShowWithCardProps = {
   text: string;
   index:number;
+  img:string;
   onClick: () => void;
 };
 
 const ShowWithCard = (props: TShowWithCardProps) => {
 
-  const imgURL = 'https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&cs=tinysrgb&w=600'
-  const { text, onClick} = props;
+  const { text, onClick,img,index} = props;
   return (
     <div
       className="cursor-pointer rounded-md bg-[#242424] border border-[#313131] hover:border-[#3c3c3c] overflow-hidden flex flex-col"
       onClick={onClick}
     >
       <div className="w-full h-full">
-        <img src={imgURL} alt="saitam-img" loading="lazy" />
+        <img src={img} alt="saitam-img" loading="lazy" />
       </div>
-      <p className="text-white text-sm uppercase px-4 py-2">{text}</p>
+      <p className="text-white text-sm uppercase px-4 py-2 text-center">{index}-{text}</p>
     </div>
   );
 };

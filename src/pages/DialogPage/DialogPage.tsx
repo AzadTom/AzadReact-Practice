@@ -17,7 +17,7 @@ function DialogPage() {
   const [state, setState] = useState<boolean>(false);
 
   return (
-    <main className="max-w-4xl mx-auto">
+    <main className="max-w-4xl p-4 mx-auto">
       <GoBack/>
       <CountDown/>
       {state && (

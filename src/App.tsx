@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Homepage from "./pages/HomePage/Homepage";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import DialogPage from "./pages/DialogPage/DialogPage";
@@ -10,8 +10,19 @@ import SignUpModelPage from "./pages/SignupModel/SignUpModelPage";
 import { Fragment } from "react/jsx-runtime";
 import ButtonPage from "./pages/ButtonPage/ButtonPage";
 import BestBlogPage from "./pages/BlogPage/BestBlogPage";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/nested-comment") {
+      document.body.style.backgroundColor = "white";
+    } else {
+      document.body.style.backgroundColor = "black";
+    }
+  }, [location]);
+
   return (
     <Fragment>
       <Routes>
