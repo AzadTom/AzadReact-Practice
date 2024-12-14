@@ -1,10 +1,14 @@
 import { Fragment, useState } from "react";
 import SignUpModel, { HeroModel } from "./SignUpModel";
+import GoBack from "../../features/Utils/GoBack";
 
 function SignUpModelPage() {
   const [state, setState] = useState(false);
   return (
     <main className="mx-auto max-w-[1000px] flex flex-col items-start mt-4 px-4">
+      <div>
+      <GoBack/>
+      </div>
        <button
           className="px-4 py-2 rounded-md bg-blue-600 text-white"
           onClick={() => setState(!state)}

@@ -1,8 +1,38 @@
-*{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --primarybg-color: #121212;
+  --primarytext-color: #fafafa;
+}
+
+body {
+  background-color: var(--primarybg-color);
+  color: var(--primarytext-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f5f5f5; /* Light background for the track */
+}
+
+/* Scrollbar itself */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #8c8c8c; /* Gray color for the thumb */
+}
+
+/* Hover effect for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0; /* Darker gray when hovered */
 }
 
 .scale-up-ver-bottom {
@@ -14,36 +44,9 @@
 /* Keyframes */
 @keyframes scale-up-ver-bottom {
   0% {
-      transform: translateY(100%); /* Component starts off-screen */
+    transform: translateY(100%); /* Component starts off-screen */
   }
   100% {
-      transform: translateY(0); /* Component fully visible */
+    transform: translateY(0); /* Component fully visible */
   }
 }
-
-
-body{
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-/* Scrollbar track */
-::-webkit-scrollbar-track {
-    background: #f5f5f5; /* Light background for the track */
-  }
-  
-  /* Scrollbar itself */
-  ::-webkit-scrollbar {
-    width: 6px; /* Width of the scrollbar */
-  }
-  
-  /* Scrollbar thumb (the draggable part) */
-  ::-webkit-scrollbar-thumb {
-    background: #8c8c8c; /* Gray color for the thumb */
-  }
-  
-  /* Hover effect for the scrollbar thumb */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #b0b0b0; /* Darker gray when hovered */
-  }

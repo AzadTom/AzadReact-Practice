@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ShowModel from "../../components/ReusableComponent/Dialog/ShowModel";
 
-const NotFound = () => {
+const NotFoundPage = () => {
   const [state, setState] = useState(false);
   return (
     <>
@@ -31,7 +31,10 @@ const NotFound = () => {
         <section className="flex justify-center items-center h-screen">
           <div className="flex flex-col gap-4 justify-center items-center">
             <h2 className="text-8xl">404 PAGE</h2>
-            <button className="px-4 py-2 bg-blue-600 rounded-md text-white font-medium" onClick={()=> setState(true)}>
+            <button
+              className="px-4 py-2 bg-blue-600 rounded-md text-white font-medium"
+              onClick={() => setState(true)}
+            >
               Click Me
             </button>
           </div>
@@ -41,4 +44,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

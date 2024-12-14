@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ShowModel from "../../components/ReusableComponent/Dialog/ShowModel";
 import CountDown from "../../components/ReusableComponent/CountDown/CountDown";
+import GoBack from "../../features/Utils/GoBack";
 
 
 function DialogPage() {
@@ -17,6 +18,7 @@ function DialogPage() {
 
   return (
     <main className="max-w-4xl mx-auto">
+      <GoBack/>
       <CountDown/>
       {state && (
         <ShowModel bg={dialogColors[0]}>

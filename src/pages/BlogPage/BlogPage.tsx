@@ -1,20 +1,25 @@
 import SkeletonLayout, {
   ShimmerShape,
 } from "../../components/ReusableComponent/Skeleton/SkeletonLayout";
-import { ListType } from "../../hooks/useInfiniteScrolling1";
-import useInfiniteScroll from "../../hooks/useInfiniteScrolling2";
+import GoBack from "../../features/Utils/GoBack";
+import useInfiniteScrolling, {
+  ListType,
+} from "../../hooks/useInfiniteScrolling1";
 
 function BlogPage() {
-  const { data: list, isLoading, ref } = useInfiniteScroll();
-
+  const { isLoading, list, refs } = useInfiniteScrolling();
 
   return (
     <main className="max-w-4xl mx-auto px-4">
+      <GoBack/>
+      <h2 className="font-bold text-2xl px-4 py-2 rounded-md mt-4">
+        IntersectionObserverAPI <br /> Data Fetching
+      </h2>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {list &&
           list.length > 0 &&
-          list.map((item: ListType, index: number) => (
-            <div key={item.bloggerName + index} className="mt-4">
+          list.map((item: ListType) => (
+            <div key={item.bloggerName} className="mt-4">
               <img
                 src={item.thumb}
                 alt={item.bloggerName}
@@ -24,37 +29,36 @@ function BlogPage() {
           ))}
       </section>
       {isLoading && (
-        <section ref={ref}>
-          <SkeletonLayout>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-            </div>
-          </SkeletonLayout>
-        </section>
+        <SkeletonLayout>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+            <ShimmerShape
+              width="100%"
+              height="250px"
+              shape="roundedshape"
+              borderRadius="8px"
+            />
+          </div>
+        </SkeletonLayout>
       )}
+      <div ref={refs} />
     </main>
   );
 }
