@@ -22,10 +22,17 @@ export interface ListType {
 
 const useInfiniteScrolling = () => {
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
+  const[hasMore,setHasMore] = useState<boolean>(false);
   const [list, setList] = useState<ListType[]>([]);
+
+
+
+
   const [isLoading, setIsLoading] = useState(false);
   const refs  = useRef<HTMLDivElement|null>(null);
+
+  
 
   const getList = useCallback(async () => {
     setIsLoading(true);
@@ -39,9 +46,12 @@ const useInfiniteScrolling = () => {
       };
 
       const result = await useFetchData(config);
-      setList((prevList) => [...prevList, ...result?.list]);
-
-      console.log("result:",result)
+      if(result?.list){
+        setHasMore(result.list.length > 0);
+        setList((prevList) => [...prevList, ...result?.list]);
+      }else{
+        setHasMore(false);
+      }
     } catch (error) {
       console.error(error);
     } finally {
@@ -62,7 +72,7 @@ const useInfiniteScrolling = () => {
     };
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !isLoading) {
+      if (entry.isIntersecting && !isLoading &&hasMore) {
         setPage((prev) => prev + 1);
       }
     }, options);
@@ -76,9 +86,9 @@ const useInfiniteScrolling = () => {
         observer.unobserve(refs.current);
       }
     };
-  }, [refs,isLoading]);
+  }, [hasMore,isLoading]);
 
-  return { isLoading, list ,refs };
+  return { isLoading , list ,refs };
 
 
 };

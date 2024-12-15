@@ -16,20 +16,21 @@ const fetchList = async ({ pageParam = 1 }) => {
   return { list: result.list, nextPage: pageParam + 1 };
 };
 
+
 const useInfiniteScrollBest = () => {
 
-
+  const { ref, inView } = useInView();
+  
   const { data, fetchNextPage, hasNextPage,isFetchingNextPage } = useInfiniteQuery({
     queryKey: ['infinte-scrolling'],
     queryFn:fetchList,
     initialPageParam:1,
-    getNextPageParam:(lastpage)=> lastpage.nextPage ?? false,
+    getNextPageParam:(lastpage)=> lastpage.list.length > 0 ? lastpage.nextPage : undefined,
   });
 
-  const { ref, inView } = useInView();
+ 
 
   useEffect(() => {
-
     if (inView &&  hasNextPage && !isFetchingNextPage) {
       fetchNextPage();
     }

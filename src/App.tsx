@@ -7,10 +7,10 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Register from "./pages/Register/Register";
 import NestedComment from "./pages/NestedComment/NestedComment";
 import SignUpModelPage from "./pages/SignupModel/SignUpModelPage";
-import { Fragment } from "react/jsx-runtime";
 import ButtonPage from "./pages/ButtonPage/ButtonPage";
 import BestBlogPage from "./pages/BlogPage/BestBlogPage";
 import { useEffect } from "react";
+import ErrorBoundryWrapper from "./features/ErrorBoundry/ErrorBoundryWrapper";
 
 function App() {
   const location = useLocation();
@@ -24,19 +24,19 @@ function App() {
   }, [location]);
 
   return (
-    <Fragment>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/button" element={<ButtonPage />} />
-        <Route path="/model" element={<DialogPage />} />
-        <Route path="/scroll-model" element={<SignUpModelPage />} />
-        <Route path="/infnite-scrolling" element={<BlogPage />} />
-        <Route path="/better-infinite-scrolling" element={<BestBlogPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/nested-comment" element={<NestedComment />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Fragment>
+      <ErrorBoundryWrapper>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/button" element={<ButtonPage />} />
+          <Route path="/model" element={<DialogPage />} />
+          <Route path="/scroll-model" element={<SignUpModelPage />} />
+          <Route path="/infnite-scrolling" element={<BlogPage/>} />
+          <Route path="/better-infinite-scrolling" element={<BestBlogPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/nested-comment" element={<NestedComment />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </ErrorBoundryWrapper>
   );
 }
 

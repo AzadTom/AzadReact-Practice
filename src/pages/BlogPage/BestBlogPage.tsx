@@ -1,64 +1,55 @@
-import SkeletonLayout, {
-  ShimmerShape,
-} from "../../components/ReusableComponent/Skeleton/SkeletonLayout";
+import { Suspense } from "react";
+import List from "../../features/List/List";
 import GoBack from "../../features/Utils/GoBack";
 import { ListType } from "../../hooks/useInfiniteScrolling1";
 import useInfiniteScrollBest from "../../hooks/useInfiniteScrolling2";
+import Loading from "./Loading";
 
+const LazyList  = ()=>{
 
-function BestBlogPage() {
   const { data: list, isLoading, ref } = useInfiniteScrollBest();
 
   return (
     <main className="max-w-4xl mx-auto px-4">
-      <GoBack/>
+      <GoBack />
+      <h2 className="font-bold text-2xl px-4 py-2 rounded-md mt-4">
+        ReactIntersectionObserver <br /> TanstackQuery
+      </h2>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {list &&
-          list.length > 0 &&
-          list.map((item: ListType, index: number) => (
-            <div key={item.bloggerName + index} className="mt-4">
-              <img
-                src={item.thumb}
-                alt={item.bloggerName}
-                className="w-full h-[250px] object-cover"
-              />
-            </div>
-          ))}
+        <List
+          data={list}
+          renderItem={(item: ListType) => {
+            return (
+              <div className="mt-4">
+                <img
+                  src={item.thumb}
+                  alt={item.bloggerName}
+                  className="w-full h-[250px] object-cover"
+                />
+              </div>
+            );
+          }}
+          keyExtractor={(item: ListType) => item.bloggerName}
+        />
       </section>
       {isLoading && (
         <section ref={ref}>
-          <SkeletonLayout>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-              <ShimmerShape
-                width="100%"
-                height="250px"
-                shape="roundedshape"
-                borderRadius="8px"
-              />
-            </div>
-          </SkeletonLayout>
+          <Loading />
         </section>
       )}
     </main>
   );
+}
+
+
+
+function BestBlogPage() {
+
+  return(
+    <Suspense fallback={<Loading/>}>
+      <LazyList/>
+    </Suspense>
+  )
 }
 
 export default BestBlogPage;
