@@ -29,7 +29,7 @@ const HoverContent = (props:TShowWithCardProps)=>{
 
 
   return(
-    <div className="w-full h-full flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center h-[200px]">
       <h2 className="bg-black rounded-full px-4 py-2 text-xl font-medium">{props.index}</h2>
       <p className="text-xl font-medium">{props.text}</p>
     </div>
