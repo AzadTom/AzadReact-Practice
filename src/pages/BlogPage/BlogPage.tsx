@@ -11,7 +11,7 @@ const LazyBlogList = () => {
   const { isLoading, list, refs } = useInfiniteScrolling();
 
   return (
-    <div>
+    <>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <List
           data={list}
@@ -29,15 +29,15 @@ const LazyBlogList = () => {
       </section>
       {isLoading && <Loading/>}
       <div ref={refs} />
-    </div>
+    </>
   );
 };
 
 function BlogPage() {
   return (
-    <main className="max-w-4xl mx-auto px-4">
+    <main className="max-w-[1000px] mx-auto p-4">
       <GoBack />
-      <h2 className="font-bold text-2xl px-4 py-2 rounded-md mt-4">
+      <h2 className="font-bold text-2xl px-4 py-2 rounded-md mt-4 text-[#7c7c7c] hover:text-white">
         IntersectionObserverAPI <br /> Data Fetching
       </h2>
       <Suspense fallback={<Loading/>}>
