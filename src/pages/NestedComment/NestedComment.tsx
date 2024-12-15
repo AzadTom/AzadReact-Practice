@@ -6,9 +6,7 @@ function NestedComment() {
 
   return (
     <div>
-       <div className="bg-black">
        <GoBack/>
-       </div>
       <CommentContainer/>  
     </div>
   )

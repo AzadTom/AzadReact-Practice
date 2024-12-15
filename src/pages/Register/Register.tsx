@@ -19,8 +19,7 @@ function Register() {
   }
   return (
     <div className="flex flex-col items-center justify-center m-4">
-        <h2>Register</h2>
-        <button className="px-4 py-2 rounded-md bg-blue-600 text-white" onClick={handleNext}> Register {state?.step ? state.step :1}</button>
+        <button className="bg-pink-900 border border-pink-600 rounded-full px-4 py-2" onClick={handleNext}> Register {state?.step ? state.step :1}</button>
     </div>
   )
 }

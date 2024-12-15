@@ -42,6 +42,11 @@ function Homepage() {
       text:'NestedComment',
       route:'/nested-comment',
       img:'https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600',
+    },
+    {
+      text:'Register',
+      route:'/register',
+      img:'https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600',
     }
   ];
 

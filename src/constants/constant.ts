@@ -1,13 +1,13 @@
 // Define types for comments and nested replies
-export type Comment = {
+export type TComment = {
     id: number;
     author: string;
     content: string;
     timestamp: string;
-    replies: Comment[]; // Nested replies are of type Comment, allowing for recursive nesting
+    replies: TComment[]; // Nested replies are of type Comment, allowing for recursive nesting
   };
   
-  const commentsData: Comment[] = [
+  const commentsData: TComment[] = [
     {
       id: 1,
       author: "Alice",
@@ -79,4 +79,22 @@ export type Comment = {
   ];
   
   export default commentsData;
+
+
+  export function formatTimestamp(timestamp: string): string {
+    const date = new Date(timestamp);
+  
+    // Options for a human-readable date format
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    };
+  
+    // Format the date to a readable format, e.g., "November 10, 2024, 10:00 AM"
+    return date.toLocaleDateString("en-US", options);
+  }
   
