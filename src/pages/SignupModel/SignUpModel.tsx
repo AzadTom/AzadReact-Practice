@@ -64,8 +64,8 @@ const UserInputonSignUp = () => {
 
     const [number, setNumber] = useState<string>('');
 
-    const handleOnClick = async () => {
-        alert('i am working on it!')
+    const handleOnClick = () => {
+        alert('this works fine!');
     };
 
     return (
@@ -87,7 +87,7 @@ const UserInputonSignUp = () => {
                         setNumber(e.target.value);
                     }
                 }}
-                className="w-full outline-none px-4 py-2 flex-[0.8] h-[50px]"
+                className="w-full text-black outline-none px-4 py-2 flex-[0.8] h-[50px]"
                 placeholder="9310855758"
             />
             <button
