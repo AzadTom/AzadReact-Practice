@@ -10,11 +10,14 @@ import SignUpModelPage from "./pages/SignupModel/SignUpModelPage";
 import ButtonPage from "./pages/ButtonPage/ButtonPage";
 import BestBlogPage from "./pages/BlogPage/BestBlogPage";
 import ErrorBoundryWrapper from "./features/ErrorBoundry/ErrorBoundryWrapper";
+import NavBar from "./components/navbar/Navbar";
+import TimelinePage from "./pages/TimelinePage/TimelinePage";
 
 function App() {
 
   return (
       <ErrorBoundryWrapper>
+        <NavBar/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/button" element={<ButtonPage />} />
@@ -24,6 +27,7 @@ function App() {
           <Route path="/better-infinite-scrolling" element={<BestBlogPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/nested-comment" element={<NestedComment />} />
+          <Route path="/timeline" element={<TimelinePage/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundryWrapper>

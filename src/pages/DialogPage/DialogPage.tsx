@@ -1,25 +1,23 @@
 import { useState } from "react";
-import ShowModel from "../../components/ReusableComponent/Dialog/ShowModel";
+import ShowModel from "../../components/ReusableComponent/ModelSheet/ShowModel";
 import CountDown from "../../components/ReusableComponent/CountDown/CountDown";
 import GoBack from "../../features/Utils/GoBack";
 
-
 function DialogPage() {
+  const dialogColors = [
+    "#F0F0F0", // Light Gray
+    "#E6F7FF", // Soft Blue
+    "#FFF9C4", // Pale Yellow
+    "#E8F5E9", // Light Green
+    "#F3E5F5", // Light Lavender
+  ];
 
-    const dialogColors = [
-        "#F0F0F0", // Light Gray
-        "#E6F7FF", // Soft Blue
-        "#FFF9C4", // Pale Yellow
-        "#E8F5E9", // Light Green
-        "#F3E5F5"  // Light Lavender
-      ];
-      
   const [state, setState] = useState<boolean>(false);
 
   return (
     <main className="max-w-4xl p-4 mx-auto">
-      <GoBack/>
-      <CountDown/>
+      <GoBack />
+      <CountDown />
       {state && (
         <ShowModel bg={dialogColors[0]}>
           <div className="bg-slate-950 max-w-[300px] text-white px-4 py-2 rounded-md">
@@ -30,15 +28,15 @@ function DialogPage() {
               dolorum magnam reiciendis sapiente ratione voluptas hic, esse
               corporis ea possimus, eligendi atque, debitis quasi.
             </p>
-          <div className="flex justify-between items-center my-2">
-          <button className="px-4 py-2 border ">Thank You</button>
-            <button
-              className="px-4 py-2 bg-black border"
-              onClick={() => setState(!state)}
-            >
-              Close
-            </button>
-          </div>
+            <div className="flex justify-between items-center my-2">
+              <button className="px-4 py-2 border ">Thank You</button>
+              <button
+                className="px-4 py-2 bg-black border"
+                onClick={() => setState(!state)}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </ShowModel>
       )}

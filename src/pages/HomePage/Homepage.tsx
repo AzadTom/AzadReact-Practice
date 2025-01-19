@@ -47,6 +47,11 @@ function Homepage() {
       text:'Register',
       route:'/register',
       img:'https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600',
+    },
+    {
+      text:'Timeline',
+      route:'/timeline',
+      img:'https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600',
     }
   ];
 
