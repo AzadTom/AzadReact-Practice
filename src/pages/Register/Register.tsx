@@ -32,12 +32,8 @@ const formDetailsSchema = z.object({
     .max(50, "Organization must be at most 50 characters"),
   mobile: z
     .string()
-    .refine((value) => /^\d+$/.test(value), {
-      message: "Mobile number must contain only numbers",
-    })
-    .refine((value) => value.length === 10, {
-      message: "Mobile number must be exactly 10 digits",
-    }),
+    .min(10, "Mobile number must be exactly 10 digits")
+    .max(10, "Mobile number must be exactly 10 digits"),
 });
 
 type FormDetails = z.infer<typeof formDetailsSchema>;
@@ -91,7 +87,11 @@ const FormContainer = () => {
       }
     });
   };
-  const onSubmit = () => reset();
+  const onSubmit = () => {
+
+    setShow(false);
+    reset();
+  };
 
   return (
     <>
@@ -163,8 +163,8 @@ const FormContainer = () => {
             maxLength={10}
             className={useClassNames(inputStyles, "relative")}
             placeholder="Mobile Number"
-            {...register("mobile")}
-            onChange={handleInputChange}
+            {...register("mobile",{onChange:handleInputChange})}
+           
           />
           <button
             disabled={mobile.length === 10 ? false : true}
