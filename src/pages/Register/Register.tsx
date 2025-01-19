@@ -9,10 +9,10 @@ import SignUpModel from "../SignupModel/SignUpModel";
 const Register = () => {
   return (
     <main>
-      <SignUpModel bg="rgba(0,0,0,0.5)" alignItems="center" blur="20px" >
-      <div className="w-[360px]">
-        <FormContainer />
-      </div>
+      <SignUpModel bg="rgba(0,0,0,0.5)" alignItems="center" blur="20px">
+        <div className="w-[360px]">
+          <FormContainer />
+        </div>
       </SignUpModel>
     </main>
   );
@@ -168,7 +168,10 @@ const FormContainer = () => {
           />
           <button
             disabled={mobile.length === 10 ? false : true}
-            onClick={handleMobile}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobile();
+            }}
             className={useClassNames(
               "absolute right-0 top-0 bottom-0 w-[50px]  flex justify-center items-center rounded-tr-[4px] rounded-br-[4px]",
               mobile.length === 10 ? "bg-[#377E8B]" : "bg-[#C4C4C4]"
