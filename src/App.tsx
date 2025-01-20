@@ -12,6 +12,8 @@ import BestBlogPage from "./pages/BlogPage/BestBlogPage";
 import ErrorBoundryWrapper from "./features/ErrorBoundry/ErrorBoundryWrapper";
 import NavBar from "./components/navbar/Navbar";
 import TimelinePage from "./pages/TimelinePage/TimelinePage";
+import ClockPage from "./pages/ClockPage/ClockPage";
+import IframePage from "./pages/IframePage/IframePage";
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/nested-comment" element={<NestedComment />} />
           <Route path="/timeline" element={<TimelinePage/>}/>
+          <Route path="/clock" element={<ClockPage/>}/>
+          <Route path="/iframe" element={<IframePage/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundryWrapper>
