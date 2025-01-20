@@ -141,3 +141,15 @@
     transform: rotate(360deg);
   }
 }
+
+/*.hand#hour {*/
+/*    animation: rotate-hands 43200s linear infinite;*/
+/*}*/
+
+/*.hand#min {*/
+/*    animation: rotate-hands 3600s linear infinite;*/
+/*}*/
+
+/*.hand#sec {*/
+/*    animation: rotate-hands 60s steps(60) infinite;*/
+/*}*/
