@@ -156,7 +156,7 @@ body {
 
 /* ========== Pop Drop Animation */
 
-@keyframes fall-back {
+/* @keyframes fall-back {
    from {
        scale: 1;
    }
@@ -209,11 +209,11 @@ body {
    animation: 1s cubic-bezier(0.87, 0, 0.13, 1) both pop-in,
    1.4s cubic-bezier(0.87, 0, 0.13, 1) both come-in;
    animation-delay: 0.4s;
-}
+} */
 
 /* ========== Side Swipe  Animation */
 
-@keyframes fade-back {
+/* @keyframes fade-back {
    from {
        opacity: 1;
        scale: 1;
@@ -243,5 +243,5 @@ body {
 
 ::view-transition-new(root) {
    animation: 1s cubic-bezier(0.87, 0, 0.13, 1) both slide-in;
-}
+} */
 
