@@ -4,16 +4,17 @@ import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import SignUpModel from "../SignupModel/SignUpModel";
+import ShowModel from "../../components/ModelSheet/ShowModel";
+
 
 const Register = () => {
   return (
     <main>
-      <SignUpModel bg="rgba(0,0,0,0.5)" alignItems="center" blur="20px">
+      <ShowModel bg="rgba(0,0,0,0.5)" alignItems="center" blur="20px">
         <div className="w-[360px]">
           <FormContainer />
         </div>
-      </SignUpModel>
+      </ShowModel>
     </main>
   );
 };

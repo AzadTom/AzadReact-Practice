@@ -23,11 +23,6 @@ function Homepage() {
       img: "https://images.pexels.com/photos/7190953/pexels-photo-7190953.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-      text: "ScrollModel",
-      route: "/scroll-model",
-      img: "https://images.pexels.com/photos/7190953/pexels-photo-7190953.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
       text: "InfiniteScrolling",
       route: "/infnite-scrolling",
       img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",

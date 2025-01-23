@@ -6,11 +6,10 @@ import DialogPage from "./pages/DialogPage/DialogPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Register from "./pages/Register/Register";
 import NestedComment from "./pages/NestedComment/NestedComment";
-import SignUpModelPage from "./pages/SignupModel/SignUpModelPage";
 import ButtonPage from "./pages/ButtonPage/ButtonPage";
 import BestBlogPage from "./pages/BlogPage/BestBlogPage";
 import ErrorBoundryWrapper from "./features/ErrorBoundry/ErrorBoundryWrapper";
-import NavBar from "./components/navbar/Navbar";
+import NavBar from "./components/Navbar/Navbar";
 import TimelinePage from "./pages/TimelinePage/TimelinePage";
 import ClockPage from "./pages/ClockPage/ClockPage";
 import IframePage from "./pages/IframePage/IframePage";
@@ -24,7 +23,6 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/model" element={<DialogPage />} />
-          <Route path="/scroll-model" element={<SignUpModelPage />} />
           <Route path="/infnite-scrolling" element={<BlogPage/>} />
           <Route path="/better-infinite-scrolling" element={<BestBlogPage />} />
           <Route path="/register" element={<Register />} />
