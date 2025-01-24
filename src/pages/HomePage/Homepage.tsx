@@ -51,6 +51,11 @@ function Homepage() {
       text: "Iframe",
       route: "/iframe",
       img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      text: "ScrollAnimation",
+      route: "/scroll-animation",
+      img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",
     }
   ];
 

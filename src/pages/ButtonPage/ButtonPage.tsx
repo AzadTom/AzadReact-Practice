@@ -1,5 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 import Button from "../../features/Button/Button";
+import {Button as ReButton} from '../../components/Button/Button';
 import GoBack from "../../features/Utils/GoBack";
 
 const ButtonPage = () => {
@@ -21,6 +22,7 @@ const ButtonPage = () => {
             </Fragment>
           );
         })}
+        <ReButton className="bg-pink-600 border border-pink-900 hover:bg-pink-400 hover:border-pink-400 rounded-full">Munna Bhaiya</ReButton>
       </section>
     </Fragment>
   );

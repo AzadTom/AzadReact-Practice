@@ -55,53 +55,25 @@ function DialogPage() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
           pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
           laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
+          totam ut doloribus quia consequuntur voluptatum! Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Quibusdam pariatur, nulla dolorum
+          iste facere, voluptate odio ipsa illum quaerat laborum provident
+          repellat ducimus tenetur debitis aliquam, magnam totam ut doloribus
+          quia consequuntur voluptatum!
         </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <div>
+        <div className="flex gap-6">
           <button
             className="px-4 py-2 rounded-md bg-blue-600 text-white"
             onClick={() => handleModel(2)}
           >
-            Signup Model
+            Model
           </button>
-        </div>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <div>
+          <button
+            className="px-4 py-2 rounded-md bg-blue-600 text-white"
+            onClick={() => handleModel(1)}
+          >
+            Show Me
+          </button>
           <button
             className="px-4 py-2 rounded-md bg-blue-600 text-white"
             onClick={() => handleModel(1)}
@@ -109,55 +81,6 @@ function DialogPage() {
             Show Me
           </button>
         </div>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <div>
-          <button
-            className="px-4 py-2 rounded-md bg-blue-600 text-white"
-            onClick={() => handleModel(1)}
-          >
-            Show Me
-          </button>
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          pariatur, nulla dolorum iste facere, voluptate odio ipsa illum quaerat
-          laborum provident repellat ducimus tenetur debitis aliquam, magnam
-          totam ut doloribus quia consequuntur voluptatum!
-        </p>
       </section>
     </main>
   );

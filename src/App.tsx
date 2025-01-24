@@ -13,6 +13,7 @@ import NavBar from "./components/Navbar/Navbar";
 import TimelinePage from "./pages/TimelinePage/TimelinePage";
 import ClockPage from "./pages/ClockPage/ClockPage";
 import IframePage from "./pages/IframePage/IframePage";
+import ScrollAnimationPage from "./pages/ScrollAnimationPage/ScrollAnimationPage";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/timeline" element={<TimelinePage/>}/>
           <Route path="/clock" element={<ClockPage/>}/>
           <Route path="/iframe" element={<IframePage/>}/>
+          <Route path="/scroll-animation" element={<ScrollAnimationPage/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundryWrapper>
