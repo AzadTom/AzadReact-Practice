@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import ShowModel from "../../components/ModelSheet/ShowModel";
-
+import ShowModel from "../../components/ui/ModelSheet/ShowModel";
 
 const Register = () => {
   return (
@@ -89,7 +88,6 @@ const FormContainer = () => {
     });
   };
   const onSubmit = () => {
-
     setShow(false);
     reset();
   };
@@ -164,8 +162,7 @@ const FormContainer = () => {
             maxLength={10}
             className={useClassNames(inputStyles, "relative")}
             placeholder="Mobile Number"
-            {...register("mobile",{onChange:handleInputChange})}
-           
+            {...register("mobile", { onChange: handleInputChange })}
           />
           <button
             disabled={mobile.length === 10 ? false : true}

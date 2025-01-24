@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import List from "../../features/List/List";
-import GoBack from "../../features/Utils/GoBack";
+import GoBack from "../../components/Utils/GoBack";
 import { ListType } from "../../hooks/useInfiniteScrolling1";
 import useInfiniteScrollBest from "../../hooks/useInfiniteScrolling2";
 import Loading from "./Loading";
+import FlatList from "../../Hoc/FlatList";
 
 const LazyList = () => {
   const { data: list, isLoading, ref } = useInfiniteScrollBest();
@@ -11,7 +11,7 @@ const LazyList = () => {
   return (
     <>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <List
+        <FlatList
           data={list}
           renderItem={(item: ListType) => {
             return (
@@ -24,7 +24,6 @@ const LazyList = () => {
               </div>
             );
           }}
-          keyExtractor={(item: ListType) => item.bloggerName}
         />
       </section>
       {isLoading && (
@@ -39,13 +38,13 @@ const LazyList = () => {
 function BestBlogPage() {
   return (
     <main className="max-w-[1000px] mx-auto p-4">
-        <GoBack />
+      <GoBack />
       <h2 className="font-bold text-2xl px-4 py-2 rounded-md mt-4 text-[#7c7c7c] hover:text-white">
         ReactIntersectionObserver <br /> TanstackQuery
       </h2>
       <Suspense fallback={<Loading />}>
-      <LazyList />
-    </Suspense>
+        <LazyList />
+      </Suspense>
     </main>
   );
 }

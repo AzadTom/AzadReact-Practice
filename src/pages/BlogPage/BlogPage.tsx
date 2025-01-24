@@ -1,19 +1,18 @@
 import { Suspense } from "react";
-import GoBack from "../../features/Utils/GoBack";
+import GoBack from "../../components/Utils/GoBack";
 import useInfiniteScrolling, {
   ListType,
 } from "../../hooks/useInfiniteScrolling1";
-import List from "../../features/List/List";
 import Loading from "./Loading";
+import FlatList from "../../Hoc/FlatList";
 
 const LazyBlogList = () => {
-
   const { isLoading, list, refs } = useInfiniteScrolling();
 
   return (
     <>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <List
+        <FlatList
           data={list}
           renderItem={(item: ListType) => (
             <div key={item.bloggerName} className="mt-4">
@@ -24,10 +23,9 @@ const LazyBlogList = () => {
               />
             </div>
           )}
-          keyExtractor={(item:ListType)=> `${item.bloggerName}${item.bloggerId}`}
         />
       </section>
-      {isLoading && <Loading/>}
+      {isLoading && <Loading />}
       <div ref={refs} />
     </>
   );
@@ -40,7 +38,7 @@ function BlogPage() {
       <h2 className="font-bold text-2xl px-4 py-2 rounded-md mt-4 text-[#7c7c7c] hover:text-white">
         IntersectionObserverAPI <br /> Data Fetching
       </h2>
-      <Suspense fallback={<Loading/>}>
+      <Suspense fallback={<Loading />}>
         <LazyBlogList />
       </Suspense>
     </main>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ShowModel from "../../components/ModelSheet/ShowModel";
+import ShowModel from "../../components/ui/ModelSheet/ShowModel";
 
 const NotFoundPage = () => {
   const [state, setState] = useState(false);

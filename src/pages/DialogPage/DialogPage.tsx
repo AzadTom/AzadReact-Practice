@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ShowModel from "../../components/ModelSheet/ShowModel";
-import CountDown from "../../components/CountDown/CountDown";
-import GoBack from "../../features/Utils/GoBack";
+import ShowModel from "../../components/ui/ModelSheet/ShowModel";
+import CountDown from "../../components/ui/CountDown/CountDown";
+import GoBack from "../../components/Utils/GoBack";
 import { HeroModel } from "./SignupModelUtils";
 
 function DialogPage() {

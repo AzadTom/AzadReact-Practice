@@ -1,6 +1,6 @@
 import SkeletonLayout, {
   ShimmerShape,
-} from "../../components/Skeleton/SkeletonLayout";
+} from "../../components/ui/Skeleton/SkeletonLayout";
 
 const Loading = () => {
   return (
