@@ -8,7 +8,7 @@ export type TComment = {
   };
   
   export const commentsData1:TComment[] = [];
-  const commentsData: TComment[] = [
+  export const commentsData: TComment[] = [
     {
       id: "1",
       author: "Alice",
@@ -78,8 +78,6 @@ export type TComment = {
       ]
     }
   ];
-  
-  export default commentsData;
 
 
   export function formatTimestamp(timestamp: string): string {

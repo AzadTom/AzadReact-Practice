@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
-import  { TComment,commentsData1 } from "../../constants/constant";
+import  { TComment,commentsData } from "../../constants/constant";
 import FlatList from "../../Hoc/FlatList";
 import CommenItem from "./CommenItem";
 
 const CommentContainer = () => {
-  const [commentList, setCommentList] = useState<TComment[]>(commentsData1);
+  const [commentList, setCommentList] = useState<TComment[]>(commentsData);
   const commentRef = useRef<HTMLInputElement>(null);
 
   const handleComment = () => {
