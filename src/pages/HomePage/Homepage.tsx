@@ -1,4 +1,4 @@
-import ShowWithCard from "../../components/Utils/ShowWithCard";
+import ShowWithCard from "../../components/utils/ShowWithCard";
 import MetaTags from "./MetaTags";
 import { useNavigate } from "react-router-dom";
 
@@ -55,6 +55,11 @@ function Homepage() {
     {
       text: "ScrollAnimation",
       route: "/scroll-animation",
+      img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      text: "PDF Viewer",
+      route: "/pdf",
       img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
   ];

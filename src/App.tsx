@@ -14,6 +14,8 @@ import TimelinePage from "./pages/TimelinePage/TimelinePage";
 import ClockPage from "./pages/ClockPage/ClockPage";
 import IframePage from "./pages/IframePage/IframePage";
 import ScrollAnimationPage from "./pages/ScrollAnimationPage/ScrollAnimationPage";
+import AnimationPage from "./pages/AnimationPage/AnimationPage.tsx";
+import PDFPage from "./pages/PDFPage/PDFPage.tsx";
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
           <Route path="/clock" element={<ClockPage/>}/>
           <Route path="/iframe" element={<IframePage/>}/>
           <Route path="/scroll-animation" element={<ScrollAnimationPage/>}/>
+          <Route path="/get-animation" element={<AnimationPage/>}/>
+          <Route path="/pdf" element={<PDFPage/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundryWrapper>
