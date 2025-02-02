@@ -5,8 +5,12 @@ const TransitionPage = () => {
   return (
     <section className="max-w-[1000px] mx-auto px-4 py-8">
       <NavigationSubMenuTransition />
-      <Transition1 />
       <GalleryTransition />
+
+
+      <div className="fixed bottom-4 right-4">
+      <Transition1 />
+      </div>
     </section>
   );
 };
@@ -15,7 +19,7 @@ export default TransitionPage;
 
 const Transition1 = () => {
   return (
-    <div className="size-[100px] bg-white rounded-full cursor-pointer transition-all duration-100  ease-in-out hover:bg-red-600  hover:rounded-full" />
+    <div className="size-[80px] bg-white rounded-full cursor-pointer transition-all duration-100  ease-in-out hover:bg-red-600  hover:rounded-full" />
   );
 };
 
