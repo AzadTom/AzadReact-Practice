@@ -4,7 +4,9 @@ import "./styles.modules.css";
 const TransitionPage = () => {
   return (
     <section className="max-w-[1000px] mx-auto px-4 py-8">
+      <div className="z-50">
       <NavigationSubMenuTransition />
+      </div>
       <GalleryTransition />
 
 
@@ -30,7 +32,7 @@ const NavigationSubMenuTransition = () => {
         <ul>
           <li className="has-submenu">
             <a href="#">Services</a>
-            <ul>
+            <ul className="z-50">
               <li>
                 <a href="#">Branding</a>
               </li>
@@ -69,7 +71,7 @@ const NavigationSubMenuTransition = () => {
 const GalleryTransition = () => {
   return (
     <ul className="mt-4 grid grid-cols-3 gap-6">
-      {Array.from({ length: 9 }, (_: unknown, index: number) => (
+      {Array.from({ length: 3 }, (_: unknown, index: number) => (
         <Fragment key={index}>
           <li className="w-full h-full">
             <figure>
