@@ -16,6 +16,7 @@ import IframePage from "./pages/IframePage/IframePage";
 import ScrollAnimationPage from "./pages/ScrollAnimationPage/ScrollAnimationPage";
 import AnimationPage from "./pages/AnimationPage/AnimationPage.tsx";
 import PDFPage from "./pages/PDFPage/PDFPage.tsx";
+import TransitionPage from "./pages/TransitionPage/TransitionPage.tsx";
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/scroll-animation" element={<ScrollAnimationPage/>}/>
           <Route path="/get-animation" element={<AnimationPage/>}/>
           <Route path="/pdf" element={<PDFPage/>}/>
+          <Route path="/transition" element={<TransitionPage/>}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundryWrapper>

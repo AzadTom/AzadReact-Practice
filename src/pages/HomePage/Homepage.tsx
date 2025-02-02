@@ -62,6 +62,11 @@ function Homepage() {
       route: "/pdf",
       img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
+    {
+      text: "CSS Transition",
+      route: "/transition",
+      img: "https://images.pexels.com/photos/7190944/pexels-photo-7190944.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
   ];
 
   const handelOnClick = (item: TListType) => {
