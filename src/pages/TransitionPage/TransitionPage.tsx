@@ -10,7 +10,7 @@ const TransitionPage = () => {
       <GalleryTransition />
 
 
-      <div className="fixed bottom-4 right-4">
+      <div className="fixed bottom-4 right-4 z-50">
       <Transition1 />
       </div>
     </section>
@@ -27,7 +27,7 @@ const Transition1 = () => {
 
 const NavigationSubMenuTransition = () => {
   return (
-    <header>
+    <header className="mx-6">
       <nav>
         <ul>
           <li className="has-submenu">
@@ -50,16 +50,16 @@ const NavigationSubMenuTransition = () => {
               </li>
             </ul>
           </li>
-          <li>
+          <li className="hidden sm:block">
             <a href="#">Company</a>
           </li>
-          <li>
+          <li  className="hidden sm:block">
             <a href="#">Blog</a>
           </li>
-          <li>
+          <li  className="hidden sm:block">
             <a href="#">Careers</a>
           </li>
-          <li>
+          <li  className="hidden sm:block">
             <a href="#">Contact</a>
           </li>
         </ul>
@@ -70,7 +70,7 @@ const NavigationSubMenuTransition = () => {
 
 const GalleryTransition = () => {
   return (
-    <ul className="mt-4 grid grid-cols-3 gap-6">
+    <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-6">
       {Array.from({ length: 3 }, (_: unknown, index: number) => (
         <Fragment key={index}>
           <li className="w-full h-full">
