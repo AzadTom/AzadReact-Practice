@@ -1,4 +1,4 @@
-import ShowWithCard from "../../components/utils/ShowWithCard";
+import ShowWithCard from "../../components/utils/ShowWithCard.tsx";
 import MetaTags from "./MetaTags";
 import { useNavigate } from "react-router-dom";
 
