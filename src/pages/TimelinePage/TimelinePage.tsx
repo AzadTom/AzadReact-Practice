@@ -62,6 +62,8 @@ interface TimeLineItemProps {
 }
 
 const TimeLineItem = (props: TimeLineItemProps) => {
+
+  
   const parentStyle = useClassNames("relative flex gap-6 pb-4 ");
   const lineWithCircleStyle = useClassNames(
     "before:absolute before:left-[10px] before:h-full before:w-[1px] before:bg-[#787878]"

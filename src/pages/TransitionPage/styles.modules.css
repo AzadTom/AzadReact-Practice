@@ -246,3 +246,49 @@ figure footer {
 
 
 /* gallery */
+
+
+/* galleryScroll Transition */
+
+.gallery{
+
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+
+
+}
+.column {
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 2rem;
+  position: relative;
+
+
+}
+
+.column:nth-child(1){
+
+  top: -800px;
+}
+
+.column:nth-child(2){
+
+  top: -800px;
+}
+
+
+.column:nth-child(3){
+
+  top: -1000px;
+}
+
+
+.column:nth-child(4){
+
+  top: -1000px;
+}
+
+

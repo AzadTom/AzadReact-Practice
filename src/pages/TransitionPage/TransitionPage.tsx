@@ -1,18 +1,22 @@
 import { Fragment } from "react/jsx-runtime";
 import "./styles.modules.css";
+import { useEffect, useRef } from "react";
+import { MotionValue, useScroll, useTransform,motion } from "motion/react";
+import Lenis from 'lenis'
+import { useDimension } from "../../hooks/common/useDimension";
 
 const TransitionPage = () => {
   return (
     <section className="max-w-[1000px] mx-auto px-4 py-8">
       <div className="z-50">
-      <NavigationSubMenuTransition />
+        <NavigationSubMenuTransition />
       </div>
       <GalleryTransition />
 
-
       <div className="fixed bottom-4 right-4 z-50">
-      <Transition1 />
+        <Transition1 />
       </div>
+      <GalleryScrollTransition />
     </section>
   );
 };
@@ -53,13 +57,13 @@ const NavigationSubMenuTransition = () => {
           <li className="hidden sm:block">
             <a href="#">Company</a>
           </li>
-          <li  className="hidden sm:block">
+          <li className="hidden sm:block">
             <a href="#">Blog</a>
           </li>
-          <li  className="hidden sm:block">
+          <li className="hidden sm:block">
             <a href="#">Careers</a>
           </li>
-          <li  className="hidden sm:block">
+          <li className="hidden sm:block">
             <a href="#">Contact</a>
           </li>
         </ul>
@@ -76,7 +80,11 @@ const GalleryTransition = () => {
           <li className="w-full h-full">
             <figure>
               <a href="#">
-                <img src="/gallery-1.jpg" alt="Great Barrier Reef, Australia" className="h-[600px] object-cover" />
+                <img
+                  src="/gallery-1.jpg"
+                  alt="Great Barrier Reef, Australia"
+                  className="h-[600px] object-cover"
+                />
               </a>
               <figcaption className="">
                 <main className="">
@@ -104,5 +112,56 @@ const GalleryTransition = () => {
         </Fragment>
       ))}
     </ul>
+  );
+};
+
+const GalleryScrollTransition = () => {
+
+  const { height} = useDimension();
+  const container = useRef<HTMLDivElement|null>(null);
+
+  const {scrollYProgress} = useScroll({
+    offset:["start end","end start"]
+  });
+
+  const  y1 = useTransform(scrollYProgress,[0,1],[0,height*2]);
+  const  y2 = useTransform(scrollYProgress,[0,1],[0,height*2.3]);
+  const  y3 = useTransform(scrollYProgress,[0,1],[0,height*3.3]);
+  const  y4 = useTransform(scrollYProgress,[0,1],[0,height*2.2]);
+
+  useEffect(()=>{
+    const lenis = new Lenis();
+    function raf(time:number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  },[])
+
+
+  return (
+    <main>
+       <div className="h-[100vh]"></div>
+      <div ref={container} className="gallery overflow-hidden bg-white p-4 rounded-2xl">
+        <Column images={["/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg"]} y={y1}/>
+        <Column images={["/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg"]} y={y2}/>
+        <Column images={["/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg"]} y={y3}/>
+        <Column images={["/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg","/gallery-1.jpg"]} y={y4}/>
+      </div>
+      <div className="h-[100vh]"></div>
+    </main>
+  );
+};
+
+const Column = ({ images ,y}: { images: string[],y?:MotionValue<number> }) => {
+
+  return (
+    <motion.div  style={{y}} className="column">
+      {images.map((src: string, index: number) => (
+        <div key={index} className="w-full h-full">
+          <img src={src} alt={"thumnail"} className="min-w-[280px] w-full h-[600px] object-cover" />
+        </div>
+      ))}
+    </motion.div>
   );
 };
