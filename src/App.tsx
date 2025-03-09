@@ -17,6 +17,7 @@ import ScrollAnimationPage from "./pages/ScrollAnimationPage/ScrollAnimationPage
 import AnimationPage from "./pages/AnimationPage/AnimationPage.tsx";
 import PDFPage from "./pages/PDFPage/PDFPage.tsx";
 import TransitionPage from "./pages/TransitionPage/TransitionPage.tsx";
+import PracticeClock from "./pages/ClockPage/PracticeClock.tsx";
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/nested-comment" element={<NestedComment />} />
           <Route path="/timeline" element={<TimelinePage/>}/>
-          <Route path="/clock" element={<ClockPage/>}/>
+          <Route path="/clock" element={<PracticeClock/>}/>
           <Route path="/iframe" element={<IframePage/>}/>
           <Route path="/scroll-animation" element={<ScrollAnimationPage/>}/>
           <Route path="/get-animation" element={<AnimationPage/>}/>

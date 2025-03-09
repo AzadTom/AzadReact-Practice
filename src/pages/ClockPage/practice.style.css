@@ -1,0 +1,50 @@
+
+:root {
+    --hour-length: 64px;
+    --minute-length: 78px;
+    --second-length: 104px;
+  }
+
+
+.container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.clock{
+
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: black;
+    position: relative;
+
+}
+
+.nums {
+
+    position: absolute;
+    inset: 8px;
+    transform: rotate(calc(30deg * var(--i)));
+    text-align: center;
+    color: black;
+}
+
+.clock::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 5;
+   
+  }
+

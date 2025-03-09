@@ -1,0 +1,78 @@
+.header{
+
+    position: fixed;
+    top: 150px;
+    right: 50px;
+
+}
+
+.button{
+
+    top: 0;
+    right: 0;
+    position: absolute;   
+    height: 40px;
+    width: 100px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: pink;
+    overflow: hidden;
+
+    .slider{
+
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .en{
+
+            height: 100%;
+            width: 100%;
+            background-color: #c9fd74;
+            color: black;
+            text-transform: uppercase;
+            &:nth-child(2){
+                position: absolute;
+                top: 100%;
+                background-color: black;
+                color: white;
+    
+            }
+        }
+
+        .perpectivetext{
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p{
+
+                &:nth-child(2){
+
+                    position: absolute;
+                }
+            }
+        }
+
+    }
+
+   
+
+}
+
+
+.menu {
+
+    position: relative;
+    width: 480px;
+    height: 650px;
+    background-color: #c9fd74;
+    border-radius: 25px;
+
+}
