@@ -1,7 +1,7 @@
 import  { useState } from "react";
 import styles from "./style.module.scss";
 import { motion } from "motion/react";
-import NavBar from "./Nav/navbar";
+import NavBar from "./Nav/NavBar";
 
 const varients = {
   open: {
