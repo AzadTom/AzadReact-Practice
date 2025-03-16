@@ -11,7 +11,7 @@ import BestBlogPage from "./pages/BlogPage/BestBlogPage";
 import ErrorBoundryWrapper from "./components/ui/ErrorBoundry/ErrorBoundryWrapper.tsx";
 import NavBar from "./components/ui/Navbar/Navbar.tsx";
 import TimelinePage from "./pages/TimelinePage/TimelinePage";
-import ClockPage from "./pages/ClockPage/ClockPage";
+// import ClockPage from "./pages/ClockPage/ClockPage";
 import IframePage from "./pages/IframePage/IframePage";
 import ScrollAnimationPage from "./pages/ScrollAnimationPage/ScrollAnimationPage";
 import AnimationPage from "./pages/AnimationPage/AnimationPage.tsx";
