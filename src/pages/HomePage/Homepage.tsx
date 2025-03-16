@@ -1,3 +1,6 @@
+import Class1 from "../../components/Framer/Class1/Class1";
+import Class2 from "../../components/Framer/Class2/Class2";
+import Class3 from "../../components/Framer/Class3/Class3";
 import ShowWithCard from "../../components/Utils/ShowWithCard";
 import MetaTags from "./MetaTags";
 import { useNavigate } from "react-router-dom";
@@ -92,6 +95,9 @@ function Homepage() {
           />
         ))}
       </main>
+      <Class1/>
+      <Class2/>
+      <Class3/>
     </>
   );
 }
