@@ -1,5 +1,6 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import 'remixicon/fonts/remixicon.css'
+import { Routes, Route, useLocation } from "react-router-dom";
 import Homepage from "./pages/HomePage/Homepage";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import DialogPage from "./pages/DialogPage/DialogPage";
@@ -18,30 +19,34 @@ import AnimationPage from "./pages/AnimationPage/AnimationPage.tsx";
 import PDFPage from "./pages/PDFPage/PDFPage.tsx";
 import TransitionPage from "./pages/TransitionPage/TransitionPage.tsx";
 import PracticeClock from "./pages/ClockPage/PracticeClock.tsx";
+import Portfolio from "./project/portfolio/index.tsx";
 
 function App() {
+  const location = useLocation();
+  const listOfRoutes = ["/project/portfolio"];
 
   return (
-      <ErrorBoundryWrapper>
-        <NavBar/>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/button" element={<ButtonPage />} />
-          <Route path="/model" element={<DialogPage />} />
-          <Route path="/infnite-scrolling" element={<BlogPage/>} />
-          <Route path="/better-infinite-scrolling" element={<BestBlogPage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/nested-comment" element={<NestedComment />} />
-          <Route path="/timeline" element={<TimelinePage/>}/>
-          <Route path="/clock" element={<PracticeClock/>}/>
-          <Route path="/iframe" element={<IframePage/>}/>
-          <Route path="/scroll-animation" element={<ScrollAnimationPage/>}/>
-          <Route path="/get-animation" element={<AnimationPage/>}/>
-          <Route path="/pdf" element={<PDFPage/>}/>
-          <Route path="/transition" element={<TransitionPage/>}/>
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </ErrorBoundryWrapper>
+    <ErrorBoundryWrapper>
+      {listOfRoutes.includes(location.pathname) ? null : <NavBar />}
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/button" element={<ButtonPage />} />
+        <Route path="/model" element={<DialogPage />} />
+        <Route path="/infnite-scrolling" element={<BlogPage />} />
+        <Route path="/better-infinite-scrolling" element={<BestBlogPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/nested-comment" element={<NestedComment />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/clock" element={<PracticeClock />} />
+        <Route path="/iframe" element={<IframePage />} />
+        <Route path="/scroll-animation" element={<ScrollAnimationPage />} />
+        <Route path="/get-animation" element={<AnimationPage />} />
+        <Route path="/pdf" element={<PDFPage />} />
+        <Route path="/transition" element={<TransitionPage />} />
+        <Route path="/project/portfolio" element={<Portfolio />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </ErrorBoundryWrapper>
   );
 }
 
